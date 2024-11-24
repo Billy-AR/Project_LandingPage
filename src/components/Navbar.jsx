@@ -74,7 +74,7 @@ export default function Navbar() {
                 <NavItem label="About" href="#snippet" mobileClass={true} />
                 <NavItem label="Booking" mobileClass={true} href="#booking" />
                 <NavItem label="Devices" mobileClass={true} href="#access" />
-                <NavItem label="Fasility" mobileClass={true} href="#supercharge" />
+                <NavItem label="Facility" mobileClass={true} href="#supercharge" />
               </motion.ul>
             )}
           </AnimatePresence>
@@ -83,7 +83,7 @@ export default function Navbar() {
             <NavItem label="About" href="#snippet" mobileClass={true} />
             <NavItem label="Booking" mobileClass={true} href="#booking" />
             <NavItem label="Devices" mobileClass={true} href="#access" />
-            <NavItem label="Fasility" mobileClass={true} href="#supercharge" />
+            <NavItem label="Facility" mobileClass={true} href="#supercharge" />
           </ul>
         </div>
       </div>
