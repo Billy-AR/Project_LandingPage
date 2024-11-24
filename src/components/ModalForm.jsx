@@ -28,14 +28,12 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
     const value = event.target.value;
     setPriceState((prevState) => ({
       ...prevState,
-      price: value * price,
+      price: value * prevState.price,
       quantity: value,
     }));
 
     console.log(priceState.price * priceState.quantity);
   }
-
-  let totalPay;
 
   const modalDialog = useRef();
 
