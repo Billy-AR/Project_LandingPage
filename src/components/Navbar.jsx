@@ -9,9 +9,9 @@ export default function Navbar() {
     hidden: {
       opacity: 0,
       height: 0,
-      x: -100,
-      width: 1000,
-      overflow: "hidden",
+      x: 0,
+      width: "100%",
+      overflow: "100%",
       transition: {
         duration: 0.4,
       },
@@ -19,8 +19,8 @@ export default function Navbar() {
     visible: {
       opacity: 1,
       height: 180,
-      x: -100,
-      width: 1000,
+      x: 0,
+      width: "100%",
       overflow: "hidden",
       transition: {
         duration: 0.6,
@@ -62,13 +62,12 @@ export default function Navbar() {
                 animate="visible"
                 exit="hidden"
                 variants={dropdownVariants}
-                className="lg:hidden flex flex-col gap-2 items-center bg-black p-4"
+                className="lg:hidden flex flex-col gap-2 items-center bg-black p-4 w-full rounded-2xl"
                 style={{
                   position: "absolute",
                   top: "100%",
                   left: 0,
                   right: 0,
-                  width: "100%",
                 }}
               >
                 <NavItem label="Home" href="#hero" mobileClass={true} />
