@@ -18,7 +18,7 @@ export default function Navbar() {
     },
     visible: {
       opacity: 1,
-      height: 180,
+      height: 220,
       x: 0,
       width: "100%",
       overflow: "hidden",
@@ -62,7 +62,7 @@ export default function Navbar() {
                 animate="visible"
                 exit="hidden"
                 variants={dropdownVariants}
-                className="lg:hidden flex flex-col gap-2 items-center bg-black p-4 w-full rounded-2xl"
+                className="lg:hidden flex flex-col gap-2 items-center bg-black p-4 w-full rounded-xl "
                 style={{
                   position: "absolute",
                   top: "100%",
