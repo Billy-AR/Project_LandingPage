@@ -65,18 +65,20 @@ function App() {
         <section id="hero">
           <div className="absolute inset-0 md:backdrop-blur-sm md:bg-white/20 z-0  h-[60rem]"></div>
           <div className={`${sectionContainer} md:mb-[40rem] mb-72 pt-36 md:pt-16 px-10 md:px-0  relative z-10  `}>
-            <div className={`transition-transform duration-1000 ${isHeroInView ? "opacity-100 translate-x-0 " : "opacity-0 -translate-x-full"}`} ref={heroRef}>
-              <img src={logo} alt="" className="mx-auto my-16 max-w-44" />
+            <div className={`transition-transform duration-1000`} ref={heroRef}>
+              <img src={logo} alt="" className={`mx-auto my-16 max-w-44 ${isHeroInView ? "opacity-100 translate-x-0  duration-700" : "opacity-0 -translate-x-full"}`} />
 
-              <h3 className="mb-8 text-3xl font-extrabold text-black md:text-5xl duration-300 transition font-sans">Taman Sari Futsal N Basket</h3>
+              <h3 className={`mb-8 text-3xl font-extrabold text-black md:text-5xl duration-300 transition font-sans ${isHeroInView ? "opacity-100 translate-x-0  duration-700" : "opacity-0 -translate-x-full"}`}>
+                Taman Sari Futsal N Basket
+              </h3>
 
-              <p className="max-w-3xl mx-auto md:mb-10  mb-24 text-2xl md:text-black text-grayishBlue">
+              <p className={`max-w-3xl mx-auto md:mb-10  mb-24 text-2xl md:text-black text-grayishBlue ${isHeroInView ? "opacity-100 translate-x-0  duration-700" : "opacity-0 -translate-x-full"}`}>
                 Tempat sempurna untuk menikmati futsal dan basket dengan lapangan premium dan fasilitas terbaik. Untuk setiap momen olahraga yang berkelas.
               </p>
 
               {/* Button Container */}
               <div className={buttonContainer}>
-                <a href="#booking" className="p-4 px-8 rounded-full shadow-lg bg-strongCyan duration-200 hover:opacity-80">
+                <a href="#booking" className={`p-4 px-8 rounded-full shadow-lg bg-strongCyan duration-200 hover:opacity-80 ${isHeroInView ? "opacity-100 translate-x-0  duration-700" : "opacity-0 -translate-x-full"}`}>
                   Sewa Sekarang !
                 </a>
               </div>
@@ -138,7 +140,7 @@ function App() {
         {/* Modul Booking */}
         <section id="booking">
           <div ref={modulBooking1Ref} className={`${sectionContainer} my-48 space-y-10`}>
-            <h3 className={`mb-8 text-3xl font-extrabold text-darkGrayishBlue md:text-5xl duration-300 transition font-sans ${isModulBooking1InView ? "translate-x-0 opacity-100 duration-1000 delay-200" : "translate-x-full opacity-0"}`}>
+            <h3 className={`mb-8 text-3xl font-extrabold text-darkGrayishBlue md:text-5xl duration-300 transition font-sans ${isModulBooking1InView ? "translate-x-0 opacity-100 duration-700 delay-200" : "-translate-x-full opacity-0"}`}>
               Daftar Lapangan
             </h3>
 
