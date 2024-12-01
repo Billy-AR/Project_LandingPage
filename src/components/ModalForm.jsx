@@ -153,9 +153,9 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
               <option value="" disabled>
                 Pilih metode pembayaran
               </option>
-              <option value="transfer">QRIS</option>
-              <option value="creditCard">BCA</option>
-              <option value="cash">DANA</option>
+              <option value="QRIS">QRIS</option>
+              <option value="BCA">BCA</option>
+              <option value="DANA">DANA</option>
             </select>
           </div>
           <button type="submit" className="py-2 px-6 bg-slate-500 rounded-lg text-white">
