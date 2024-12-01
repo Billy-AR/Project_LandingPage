@@ -72,7 +72,7 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
         <div className="flex flex-col justify-center items-center space-y-3">
           <img src={img} alt="" className="max-w-[50%] rounded-xl" />
           <h3 className="text-xl">{title}</h3>
-          <p className="text-darkGrayishBlue text-lg">{`${formatRupiah(priceState.price)}`}</p>
+          <p className="text-darkGrayishBlue text-lg">Total: {`${formatRupiah(priceState.price)}`}</p>
         </div>
 
         {/* Konten dialog */}
