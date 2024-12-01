@@ -8,7 +8,7 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
     return null;
   }
 
-  const [priceState, setPriceState] = useState({ price, quantity: 1 });
+  const [priceState, setPriceState] = useState({ price, quantity: 1, realPrice: price });
 
   function priceOnChange(event) {
     const value = event.target.value;
@@ -16,11 +16,13 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
       setPriceState((prevState) => ({
         ...prevState,
         price: price * prevState.quantity,
+        realPrice: price,
       }));
     } else {
       setPriceState((prevState) => ({
         ...prevState,
         price: secondPrice * prevState.quantity,
+        realPrice: secondPrice,
       }));
     }
   }
@@ -28,7 +30,7 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
     const value = event.target.value;
     setPriceState((prevState) => ({
       ...prevState,
-      price: value * prevState.price,
+      price: value * priceState.realPrice,
       quantity: value,
     }));
 
@@ -70,7 +72,7 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
         <div className="flex flex-col justify-center items-center space-y-3">
           <img src={img} alt="" className="max-w-[50%] rounded-xl" />
           <h3 className="text-xl">{title}</h3>
-          <p className="text-darkGrayishBlue text-lg">Total: {`${formatRupiah(priceState.price)}`}</p>
+          <p className="text-darkGrayishBlue text-lg">{`${formatRupiah(priceState.price)}`}</p>
         </div>
 
         {/* Konten dialog */}
@@ -153,9 +155,9 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
               <option value="" disabled>
                 Pilih metode pembayaran
               </option>
-              <option value="QRIS">QRIS</option>
-              <option value="BCA">BCA</option>
-              <option value="DANA">DANA</option>
+              <option value="transfer">QRIS</option>
+              <option value="creditCard">BCA</option>
+              <option value="cash">DANA</option>
             </select>
           </div>
           <button type="submit" className="py-2 px-6 bg-slate-500 rounded-lg text-white">
