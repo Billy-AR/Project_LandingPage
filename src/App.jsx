@@ -63,7 +63,7 @@ function App() {
       <div className="overflow-hidden">
         {/* Hero Section */}
         <section id="hero">
-          <div className="absolute inset-0 md:backdrop-blur-sm md:bg-white/20 z-0  h-[60rem]"></div>
+          <div className="absolute inset-0 md:backdrop-blur-sm md:bg-white/20 z-0  h-[80rem]"></div>
           <div className={`${sectionContainer} md:mb-[40rem] mb-72 pt-36 md:pt-16 px-10 md:px-0  relative z-10  `}>
             <div className={`transition-transform duration-1000`} ref={heroRef}>
               <img src={logo} alt="" className={`mx-auto my-16 max-w-44 ${isHeroInView ? "opacity-100 translate-x-0  duration-700" : "opacity-0 -translate-x-full"}`} />
