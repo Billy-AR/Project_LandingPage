@@ -35,6 +35,7 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
     }));
 
     console.log(priceState.price * priceState.quantity);
+    console.log(formatRupiah(priceState.price));
   }
 
   const modalDialog = useRef();
@@ -45,8 +46,21 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
     const fd = new FormData(event.target);
     const data = Object.fromEntries(fd.entries());
 
-    const message = `Nama: ${data.nama}%0A` + `Tanggal Sewa: ${data.date}%0A` + `Durasi Sewa: ${data.duration} jam%0A` + `Metode Pembayaran: ${data.method}%0A` + `Lapang: ${title}%0A` + `Harga: ${formatRupiah(priceState.price)}`;
+    // Format pesan yang akan dikirim
+    const message =
+      `Nama: ${encodeURIComponent(data.nama)}%0A` +
+      `Tanggal Sewa: ${encodeURIComponent(data.date)}%0A` +
+      `Durasi Sewa: ${encodeURIComponent(data.duration)} jam%0A` +
+      `Metode Pembayaran: ${encodeURIComponent(data.method)}%0A` +
+      `Harga: ${encodeURIComponent(formatRupiah(priceState.price))}%0A` +
+      `Lapang: ${encodeURIComponent(title)}%0A`;
+
+    // Membuat URL WhatsApp dengan pesan yang telah di-encode
     const whatsappUrl = `https://api.whatsapp.com/send?phone=6287824705350&text=${message}`;
+
+    console.log("WhatsApp URL:", whatsappUrl); // Log URL untuk memastikan
+
+    // Redirect ke WhatsApp
     window.location.href = whatsappUrl;
 
     closeHandle();
@@ -72,7 +86,7 @@ export default function ModalForm({ img, title, price, open, openFn, secondPrice
         <div className="flex flex-col justify-center items-center space-y-3">
           <img src={img} alt="" className="max-w-[50%] rounded-xl" />
           <h3 className="text-xl">{title}</h3>
-          <p className="text-darkGrayishBlue text-lg">Total: {`${formatRupiah(priceState.price)}`}</p>
+          <p className="text-darkGrayishBlue text-lg">{`${formatRupiah(priceState.price)}`}</p>
         </div>
 
         {/* Konten dialog */}
